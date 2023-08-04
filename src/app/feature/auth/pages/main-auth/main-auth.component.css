@@ -1,0 +1,23 @@
+.background{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 93vh;
+    width: 100%;
+    background: url('../../../../../assets/wallpaper5.png');
+    background-repeat: repeat-x;
+}
+
+.form-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 400px;
+    height: auto;
+    background: var(--background);
+    border: 2px solid rgba(255,255,255,0.5);
+    border-radius: 20px;
+    backdrop-filter: blur(60px);
+    scale: 1; 
+}

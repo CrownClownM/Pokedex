@@ -1,0 +1,12 @@
+<body>
+    <app-navbar [pokemons]="pokemonsSearch" (filteredPokemons)="searched($event)" (filteredPokemons)="generation($event)" (filteredPokemons)="type($event)"></app-navbar>
+    <div class="background">
+        <div class="container">     
+            <div class="all-pokemons" id="listaPokemon">
+                <app-card *ngFor="let pokemon of pokemons" [pokemon]="pokemon"></app-card>
+            </div>
+        </div>
+    </div>
+    <app-paginator [items]="pokemonsPaginator" [length]="length" [pageIndex]="index" (paginated)="paginated($event)"></app-paginator>
+</body>
+

@@ -1,0 +1,20 @@
+mat-paginator {
+    background-color: var(--text);
+    color: var(--background);
+}
+
+mat-label {
+    color: var(--background);
+}
+
+::ng-deep .mat-select-value-text {
+    color: var(--background) !important;
+}
+
+::ng-deep .mat-form-field.mat-focused .mat-form-field-ripple {
+    background-color: var(--background);
+}
+
+::ng-deep .mat-form-field.mat-focused.mat-primary .mat-select-arrow{
+    color: var(--background);
+}

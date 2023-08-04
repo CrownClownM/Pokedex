@@ -1,0 +1,19 @@
+<div class="pokemon" (click)="pokemonInformation()">
+    <p *ngIf="pokemonDetails && pokemonDetails.id" class="pokemon-id-back">#{{pokemonDetails.id | pokeid}}</p>
+    <div class="pokemon-image">
+        <img *ngIf="pokemonDetails && pokemonDetails.sprites" [src]="pokemonDetails.sprites.other['official-artwork'].front_default">
+    </div>
+    <div class="pokemon-info">
+        <div class="nombre-container">
+            <p *ngIf="pokemonDetails && pokemonDetails.id" class="pokemon-id">#{{pokemonDetails.id | pokeid}}</p>
+            <h2 class="pokemon-name">{{pokemon.name}}</h2>
+        </div>
+        <div *ngIf="pokemonDetails && pokemonDetails.types" class="pokemon-types">
+            <p class="{{type.type.name}} type" *ngFor="let type of pokemonDetails.types">{{type.type.name}}</p>
+        </div>
+        <div class="pokemon-stats">
+            <p *ngIf="pokemonDetails && pokemonDetails.height" class="stat">{{pokemonDetails.height}}M</p>
+            <p *ngIf="pokemonDetails && pokemonDetails.weight" class="stat">{{pokemonDetails.weight}}KG</p>
+        </div>
+    </div>
+</div>

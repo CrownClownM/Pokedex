@@ -1,0 +1,12 @@
+footer {
+    background-color: var(--text);
+}
+
+p{
+    margin-bottom: 0;
+    color: var(--background);
+}
+
+span {
+    color: var(--scroll);
+}
