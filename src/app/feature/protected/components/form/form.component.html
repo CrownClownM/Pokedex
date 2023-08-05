@@ -1,1 +1,38 @@
-<p>form works!</p>
+<form class="form-register" [formGroup]="miFormulario" (ngSubmit)="editar()">
+    <h5>Editar perfil</h5>
+    <div class="field-section">
+        <label>Nombre</label>
+        <input class="controls" 
+                type="text" 
+                formControlName="name"
+                placeholder="Ingrese su nombre">  
+        <span *ngIf="campoValido('name')">
+                Debe ser de minimo 3 caracteres
+        </span>
+    </div>
+    <div class="field-section">
+        <label>Correo</label>
+        <input class="controls" 
+                type="email" 
+                formControlName="email"
+                placeholder="Ingrese su correo">
+        <span *ngIf="campoValido('email')">
+                Debe ser un correo
+        </span>
+    </div>
+    <div class="field-section">
+        <label>Contraseña</label>
+        <input class="controls" 
+                type="password" 
+                formControlName="password"
+                placeholder="Ingrese su contraseña">
+        <span *ngIf="campoValido('password')">
+                Debe ser de minimo 6 caracteres sin espacios o simbolos especiales
+        </span>
+    </div>
+
+   <div class="buttons">
+    <button mat-raised-button color="warn" [mat-dialog-close]="false">Cancelar</button>
+    <button mat-raised-button type="submit" color="primary">Guardar cambios</button>
+   </div>
+</form>

@@ -20,6 +20,7 @@ export interface PokeDetailResponse {
     types:                    Type[];
     sprites:                  Sprites;
     weight:                   number;
+    stats:                    Stat[];
 }
 
 export interface Species {
@@ -34,6 +35,9 @@ export interface Type {
 
 export interface Sprites {
     other:             Other;
+    versions:          Versions;
+    animated:          Sprites;
+    front_default:     string;
 }
 
 export interface Other {
@@ -43,6 +47,20 @@ export interface Other {
 export interface OfficialArtwork {
     front_default: string;
     front_shiny:   string;
+}
+
+export interface Versions {
+    "generation-v":    GenerationV;
+}
+
+export interface GenerationV {
+    "black-white": Sprites;
+}
+
+export interface Stat {
+    base_stat: number;
+    effort:    number;
+    stat:      Species;
 }
 
 // Pokemon types select-list

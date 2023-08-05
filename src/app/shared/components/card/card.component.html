@@ -1,4 +1,4 @@
-<div class="pokemon" (click)="pokemonInformation()">
+<div class="pokemon" (click)="pokemonInformation(pokemonDetails)">
     <p *ngIf="pokemonDetails && pokemonDetails.id" class="pokemon-id-back">#{{pokemonDetails.id | pokeid}}</p>
     <div class="pokemon-image">
         <img *ngIf="pokemonDetails && pokemonDetails.sprites" [src]="pokemonDetails.sprites.other['official-artwork'].front_default">

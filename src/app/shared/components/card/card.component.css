@@ -63,7 +63,7 @@
 }
 
 .pokemon-id {
-    background-color: var(--clr-gray);
+    background-color: var(--clr-text);
     padding: .25rem .5rem;
     border-radius: 100vmax;
     font-size: .75rem;
@@ -96,7 +96,7 @@
 }
 
 .stat {
-    background-color: var(--clr-gray);
+    background-color: var(--clr-text);
     padding: .25rem .5rem;
     border-radius: 100vmax;
 }

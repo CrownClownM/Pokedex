@@ -12,6 +12,7 @@
 
     --clr-black: #1c1c1c;
     --clr-gray: #ececec;
+    --clr-text: #ececec;
     --clr-white: #f7f7f7;
 
     --type-normal: #A8A878;
@@ -90,5 +91,6 @@ body::-webkit-scrollbar-thumb {
     --shadowCard:rgba(255, 255, 255, 1);
     --scroll: #0c52e9;
     --scroll-thumb-color: var(--scroll);
+    --clr-gray: #ececec21;
 }
 

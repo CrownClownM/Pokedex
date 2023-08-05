@@ -2,7 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { PokeDetailResponse, Result } from 'src/app/core/interfaces/pokemon.interface';
 import { PokeapiService } from 'src/app/core/services/pokeapi.service';
-import { PokemonInformationComponent } from 'src/app/home/components/pokemon-information/pokemon-information.component';
+import { PokeInfoComponent } from 'src/app/feature/home/components/poke-info/poke-info.component';
 
 @Component({
   selector: 'app-card',
@@ -21,11 +21,9 @@ export class CardComponent implements OnInit {
     .subscribe(data => this.pokemonDetails = data)
   }
 
-  pokemonInformation(){
-    const dialogRef = this.dialog.open(PokemonInformationComponent);
-
+  pokemonInformation(data:PokeDetailResponse){
+    const dialogRef = this.dialog.open(PokeInfoComponent, {data});
     dialogRef.afterClosed().subscribe(result => {
-      
     });
   }
 

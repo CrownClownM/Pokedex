@@ -50,9 +50,8 @@ export class NavbarComponent implements OnInit {
   filterType(event:string){
     this.poke.getPokemonTypes(event)
     .subscribe(data => {
-      const filterTypePokemon = data.pokemon;
-      console.log(filterTypePokemon);
-/*       this.filteredPokemons.emit(filterTypePokemon); */
+      const filterTypePokemon = data;
+      this.filteredPokemons.emit(filterTypePokemon);
     })
   }
 

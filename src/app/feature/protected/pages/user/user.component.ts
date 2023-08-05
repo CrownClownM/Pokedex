@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { RegisterResponse } from 'src/app/shared/interfaces/auth.interface';
 import { AuthService } from 'src/app/shared/services/auth.service';
 import { FormComponent } from '../../components/form/form.component';
+import { PokeFavComponent } from '../../components/poke-fav/poke-fav.component';
 
 @Component({
   selector: 'app-user',
@@ -13,7 +14,6 @@ import { FormComponent } from '../../components/form/form.component';
 export class UserComponent implements OnInit {
 
   profile !: RegisterResponse;
-  flag: boolean = false;
 
   constructor(private auth: AuthService, private router:Router, private dialog: MatDialog) { }
 
@@ -33,9 +33,15 @@ export class UserComponent implements OnInit {
 
   dialogFormEdit(data:RegisterResponse) {
     const dialogRef = this.dialog.open(FormComponent, {data});
-
     dialogRef.afterClosed().subscribe(result => {
+      this.auth.getProfile()
+      .subscribe(profile => this.profile = profile);
+    });
+  }
 
+  dialogField() {
+    const dialogRef = this.dialog.open(PokeFavComponent);
+    dialogRef.afterClosed().subscribe(result => {
     });
   }
 

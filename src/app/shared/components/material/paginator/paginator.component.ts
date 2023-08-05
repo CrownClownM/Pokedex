@@ -19,15 +19,11 @@ export class PaginatorComponent {
 
   onPageChange(event: PageEvent) {
     const startIndex = event.pageIndex * event.pageSize;
-    console.log(event.pageSize);
-    console.log(startIndex);
     let endIndex = startIndex + event.pageSize;
     if (endIndex > this.items.length) {
       endIndex = this.items.length;
     }
     this.itemsSlice = this.items.slice(startIndex, endIndex);
-    console.log(startIndex, endIndex);
-    console.log(this.itemsSlice);
     this.paginated.emit(this.itemsSlice);
   }
 

@@ -1,0 +1,37 @@
+<form class="form-register" [formGroup]="miFormulario">
+    <h5>Agregar Pokemon favorito</h5>
+    <button mat-raised-button type="submit" color="primary" (click)="addPokeFields()">Agregar</button>
+    <div formArrayName="poke" *ngFor="let item of pokeField.controls; let i = index">
+        <div [formGroupName]="i">
+            <mat-form-field>
+                <mat-label>País</mat-label>
+                <mat-select
+                  formControlName="name"
+                  (openedChange)="cleanSearchFields()"
+                >
+                  <div class="sticky">
+                    <input
+                      class="input-search rounded m-2 h-75 p-2"
+                      type="text"
+                      placeholder="Ingresar país"
+                      [(ngModel)]="filterPokemon"
+                      [ngModelOptions]="{ standalone: true }"
+                      (keydown)="$event.stopPropagation()"
+                      (keyup)="filterPoke()"
+                    />
+                  </div>
+                  <mat-option
+                    *ngFor="let pokemon of copyLista"
+                    [value]="pokemon"
+                  >
+                    {{ pokemon }}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+        </div>
+    </div>
+   <div class="buttons">
+    <button mat-raised-button color="warn" [mat-dialog-close]="false">Cancelar</button>
+    <button mat-raised-button type="submit" color="primary">Guardar cambios</button>
+   </div>
+</form>

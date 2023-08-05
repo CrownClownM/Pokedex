@@ -1,0 +1,36 @@
+<div class="card">
+    <div class="head">
+        <img [src]="pokemonDetails.sprites.versions['generation-v']['black-white'].animated.front_default">
+        <p class="title">{{pokemonDetails.name}}</p>
+        <p class="order">{{pokemonDetails.id | pokeid}}</p>
+    </div>
+    <img class="poke-image" [src]="pokemonDetails.sprites.other['official-artwork'].front_default">
+    <div class="info">
+        <div class="info-left">
+            <p>Tipo</p>
+            <p>Peso</p>
+            <p>Altura</p>
+        </div>
+        <div class="info-right">
+            <div class="pokemon-types">
+                <p class="{{type.type.name}} type" *ngFor="let type of pokemonDetails.types">{{type.type.name}}</p>
+            </div>
+            <p *ngIf="pokemonDetails && pokemonDetails.height" class="stat">{{pokemonDetails.height}}M</p>
+            <p *ngIf="pokemonDetails && pokemonDetails.weight" class="stat">{{pokemonDetails.weight}}KG</p>
+        </div>
+    </div>
+    <div class="stats">
+        <div class="stats-left">
+            <p>Vida</p>
+            <p>Ataque</p>
+            <p>Defensa</p>
+            <p>Ataque especial</p>
+            <p>Defensa especial</p>
+            <p>Velocidad</p>
+        </div>
+        <div class="stats-right">
+            <p *ngFor="let stat of pokemonDetails.stats">{{stat.base_stat}}</p>
+        </div>
+    </div>
+
+</div>

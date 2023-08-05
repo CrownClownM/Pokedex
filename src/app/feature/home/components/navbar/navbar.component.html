@@ -4,17 +4,19 @@
         <input type="text" placeholder="Buscar" name="termino" [(ngModel)]="word">
         <button type="submit"><img src="../../../../../assets/pikachu.png"></button>
     </form>
-    <mat-form-field>
-      <mat-label>Elige una generación</mat-label>
-      <mat-select (selectionChange)="filterGeneration($event.value)">
-        <mat-option *ngFor="let generation of generations" value="{{generation.name}}">{{generation.name | titlecase}}</mat-option>
-      </mat-select>
-    </mat-form-field>
-<!--       <mat-form-field>
-        <mat-label>Elige un tipo</mat-label>
-        <mat-select (selectionChange)="filterType($event.value)">
-          <mat-option *ngFor="let type of types" value="{{type.name}}">{{type.name | titlecase}}</mat-option>
+    <div>
+      <mat-form-field>
+        <mat-label>Elige una generación</mat-label>
+        <mat-select (selectionChange)="filterGeneration($event.value)">
+          <mat-option *ngFor="let generation of generations" [value]="generation.name">{{generation.name | titlecase}}</mat-option>
         </mat-select>
-      </mat-form-field> -->
+      </mat-form-field>
+        <mat-form-field>
+          <mat-label>Elige un tipo</mat-label>
+          <mat-select (selectionChange)="filterType($event.value)">
+            <mat-option *ngFor="let type of types" [value]="type.name">{{type.name | titlecase}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+    </div>
   </nav>
 </header>

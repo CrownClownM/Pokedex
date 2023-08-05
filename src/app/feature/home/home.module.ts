@@ -6,12 +6,14 @@ import { MainComponent } from './pages/main/main.component';
 import { SharedModule } from '../../shared/shared.module';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FormsModule } from '@angular/forms';
+import { PokeInfoComponent } from './components/poke-info/poke-info.component';
 
 
 @NgModule({
   declarations: [
     MainComponent,
-    NavbarComponent
+    NavbarComponent,
+    PokeInfoComponent
   ],
   imports: [
     CommonModule,

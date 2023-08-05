@@ -43,6 +43,14 @@ export class AuthService {
     return this.http.post<RegisterResponse>( url, body )
   }
 
+  edit( id:number, name: string, email: string, password: string, avatar:string ) {
+
+    const url  = `${ this.baseUrl }/users/${id}`;
+    const body = { name, email, password, avatar };
+
+    return this.http.put<RegisterResponse>( url, body )
+  }
+
   registerAndLogin( name: string, email: string, password: string ) {
     return this.register(name, email, password)
     .pipe(

@@ -8,12 +8,10 @@ import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared/shared.module';
 import { TokenInterceptor } from './shared/interceptors/token.interceptor';
-import { PokemonInformationComponent } from './home/components/pokemon-information/pokemon-information.component';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    PokemonInformationComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,

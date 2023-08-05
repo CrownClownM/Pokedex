@@ -15,6 +15,7 @@ import { PaginatorComponent } from './components/material/paginator/paginator.co
   exports: [
     CardComponent,
     PaginatorComponent,
+    PokeidPipe,
     Material_Modules
   ],
   imports: [

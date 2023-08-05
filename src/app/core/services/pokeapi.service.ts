@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, map } from 'rxjs';
 
 import { environment } from 'src/environments/environment.prod';
-import { GenerationQueryResponse, GenerationResponse, PokeDetailResponse, PokeResponse, TypeQueryResponse, TypeResponse } from '../interfaces/pokemon.interface';
+import { Generation, GenerationQueryResponse, GenerationResponse, PokeDetailResponse, PokeResponse, TypeQueryResponse, TypeResponse } from '../interfaces/pokemon.interface';
 
 
 @Injectable({
@@ -45,16 +45,17 @@ export class PokeapiService {
     return this.http.get<GenerationQueryResponse>(url);
   }
 
-  getPokemonTypes(type:string): Observable<TypeQueryResponse>{
+  getPokemonTypes(type:string): Observable<Generation[]>{
     const url = `${ this.baseUrl }/type/${type}`;
     return this.http.get<TypeQueryResponse>(url)
-    /* .pipe(
-      map((data:any) => data.map((item:any) => {
-        console.log('Desde el servicio:',item);
-        return item;
-      })  // Modifica la respuesta aquí
-    )
-    ) */
+    .pipe(
+      map(data => data.pokemon.map(item => {
+        return {
+          name: item.pokemon.name,
+          url: item.pokemon.url
+        }
+      }))
+    );
   }
 
 }
